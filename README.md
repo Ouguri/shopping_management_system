@@ -99,12 +99,12 @@ Modern browsers and Internet Explorer 10+.
 Copyright (c) 2017-present PanJiaChen
 
 
-build ---- index.js 是 webpack 的配置文件【很少修改】
-mock ---- mock 数据的文件夹【模拟一些假数据 mock.js 实现】，实际开发用真实接口
+build ---- index.js 是 webpack 的配置文件
+mock ---- mock 数据的文件夹
 node_modules ---- 项目依赖项模块
-public ---- icon图标，静态页面，该文件夹放置静态资源，在项目打包的时候 webpack 不会编译他，原封不动打包到 dist 里面
+public ---- icon图标，静态页面，该文件夹放置静态资源
 
-src ---- 程序员源代码的地方
+src 
     ---- api 文件夹与请求相关
     ---- assets 文件夹放置静态资源，用于共享，webpack 会在打包时进行编译
     ---- components 文件夹，一般放置非路由组件或者全局组件

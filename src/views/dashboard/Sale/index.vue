@@ -80,6 +80,7 @@
 import * as echarts from 'echarts'
 import dayjs from 'dayjs'
 import { mapState } from 'vuex'
+import { nextTick } from 'process'
 export default {
   name: '',
   data() {
@@ -123,45 +124,47 @@ export default {
     listState() {}
   },
   mounted() {
-    this.myCharts = echarts.init(this.$refs.charts)
-    this.myCharts.setOption({
-      title: {
-        text: `销售额趋势`
-      },
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow'
-        }
-      },
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-      },
-      xAxis: [
-        {
-          type: 'category',
-          data: this.listState.orderFullYearAxis,
-          axisTick: {
-            alignWithLabel: true
+    nextTick(() => {
+      this.myCharts = echarts.init(this.$refs.charts)
+      this.myCharts.setOption({
+        title: {
+          text: `销售额趋势`
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow'
           }
-        }
-      ],
-      yAxis: [
-        {
-          type: 'value'
-        }
-      ],
-      series: [
-        {
-          name: 'Direct',
-          type: 'bar',
-          barWidth: '40%',
-          data: this.listState.orderFullYear
-        }
-      ]
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: [
+          {
+            type: 'category',
+            data: this.listState.orderFullYearAxis,
+            axisTick: {
+              alignWithLabel: true
+            }
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value'
+          }
+        ],
+        series: [
+          {
+            name: 'Direct',
+            type: 'bar',
+            barWidth: '40%',
+            data: this.listState.orderFullYear
+          }
+        ]
+      })
     })
   },
   methods: {

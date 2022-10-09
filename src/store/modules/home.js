@@ -1,4 +1,5 @@
-import mockRequest from '@/utils/mockRequest.js'
+// import mockRequest from '@/utils/mockRequest.js'
+import datas from '../../../mock/data.json'
 
 const state = {
   list: {}
@@ -11,8 +12,10 @@ const mutations = {
 const actions = {
   // 发请求获取首页模拟数据
   async getData({ commit }) {
-    const result = await mockRequest.get('/home/list')
-    if (result.code === 20000) commit('GETDATA', result.data)
+    // const result = await mockRequest.get('/line')
+    const result = await datas
+    // if (result.code === 20000) commit('GETDATA', result.data)
+    commit('GETDATA', result)
   }
 }
 const getters = {}

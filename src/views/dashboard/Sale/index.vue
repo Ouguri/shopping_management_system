@@ -166,6 +166,7 @@ export default {
         ]
       })
     })
+    window.onresize = this.myCharts.resize
   },
   methods: {
     // 获取本日

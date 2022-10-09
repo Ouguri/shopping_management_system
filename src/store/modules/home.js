@@ -13,7 +13,7 @@ const actions = {
   // 发请求获取首页模拟数据
   async getData({ commit }) {
     // const result = await mockRequest.get('/line')
-    const result = await datas
+    const result = datas
     // if (result.code === 20000) commit('GETDATA', result.data)
     commit('GETDATA', result)
   }
